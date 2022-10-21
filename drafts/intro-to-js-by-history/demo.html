@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test() {
+            var varNum = 1;
+            let letNum = 2;
+            console.log(`Before the if: ${varNum} ${letNum}`)
+            if (true) {
+                var varNum = 3;
+                let letNum = 4;
+                console.log(`Inside the if: ${varNum} ${letNum}`)
+            }
+            console.log(`Outside the if: ${varNum} ${letNum}`)
+        }
+
+        test();
+    </script>
+</head>
+<body>
+    Hello world
+</body>
+</html>
