@@ -11,20 +11,17 @@ interface User {
   name: string;
 }
 
-function isUser(json: any): json is User {
-  if (!json) return false;
-  // TODO this isn't good enough. If `json` is string it'll error
-  return typeof json.name === "string";
-}
+const isObject = (unknown: unknown): Record<PropertyKey, unknown> =>
+  unknown !== null && typeof unknown === "object";
 
-function getUserFromApi(userId: string): Promise<User> {
-  return fetchUser(userId)
+const isUser = (json: unknown): json is User =>
+  isObject(json) && typeof json.name === "string";
+
+const getUserFromApi = (userId: string): Promise<User> =>
+  fetchUser(userId)
     .then((response) => response.json())
     .then((json) => {
-      if (isUser(json)) {
-        return json;
-      }
+      if (isUser(json)) return json;
       throw new Error("Unrecognised response from API");
     });
-}
 ```
