@@ -34,6 +34,10 @@ TODO also UTF/UNICODE breakdowns
 
 Japanese will happily mix and match hirogana, katakana and the other one TODO
 
+## Every language which shares an alphabet has the same alphabetic ordering
+
+TODO (see String.prototype.localeCompare edgecases)
+
 ## If a language has plural forms, all nouns use it
 
 TODO
